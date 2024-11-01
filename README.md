@@ -14,3 +14,4 @@ This repository contains the following main directories:
   
 - **tracik_lib/**: This is a submodule containing the TRAC-IK library, allowing seamless integration with CoIKS for comparative purposes. Users need to initialize this submodule to access TRAC-IK functionality within the benchmark tests.
 
+> **Note**: A preliminary version of this concurrent solver, developed for surgical manipulators under Remote Center of Motion (RCM) constraints, was introduced in the paper *"A Concurrent Framework for Constrained Inverse Kinematics of Minimally Invasive Surgical Robots."* The code for this previous version is available in the [CoIKS-Surg repository](https://github.com/jcolan/CoIKS-Surg). 
