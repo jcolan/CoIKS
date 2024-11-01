@@ -39,5 +39,4 @@ CoIKS (Concurrent Inverse Kinematics Solver) is a framework designed for efficie
 ## License
 This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
 
-> **Note**: A preliminary version of this concurrent solver, developed for surgical manipulators under Remote Center of Motion (RCM) constraints, was introduced in the paper *"A Concurrent Framework for Constrained Inverse Kinematics of Minimally Invasive Surgical Robots."* The code for this previous version is available in the [CoIKS-Surg repository](https://github.com/jcolan/CoIKS-Surg). 
 
