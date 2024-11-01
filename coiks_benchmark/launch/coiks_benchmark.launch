@@ -1,0 +1,79 @@
+<launch>
+
+    <!-- Robot used for evaluation:[0] 6-DOF + Endoscope [1] 7-DOF + OpenRST [2] 7-DOF + Hyperedundant RST  -->
+    <param name="robot_id" value="12"/>
+    <!-- Options: coiks_invj, coiks_nlo, coiks_qp, coiks_evol, coiks_invj_nlo, 
+    coiks_invj_qp, coiks_qp_nlo, coiks_all, coiks_invj_multi-->
+    <arg name="ik_solver" default="coiks_nlo"/>
+    <param name="ik_solver" value="$(arg ik_solver)" type="str"/>
+
+    <param name="max_iter" value="5000"/>
+    <param name="max_time" value="0.01"/>
+    <param name="max_error" value="0.00001"/>
+    <param name="delta_integration" value="1.0"/>
+    <param name="solve_mode" value="speed"/>
+
+    <param name="tracik_enable" value="false"  type="bool"/>
+    <param name="kdl_enable" value="false"  type="bool"/>
+
+    <!-- Bitwise mask for printing [CODCS, TRACIK, KDL] -->
+    <param name="print_all" value="0"/>
+
+    <param name="solv_time_stats" value="no"  type="str"/>
+    <param name="solv_verb_level" value="0"  type="int"/>
+
+    <param name="n_random_config" value="10000"/>
+    <param name="error_type" value="log6"  type="str"/>
+
+    <!-- INVJ Variables -->
+    <!-- Residual coefficient  -->
+    <param name="invj_Ke1" value="1.0"/>
+
+    <!-- Multi-threaded INVJ -->
+    <param name="invj_multi_n_solvers" value="4"  type="int"/>
+    <param name="invj_max_stagnation_iter" value="10"  type="int"/>
+    <param name="invj_improvement_threshold" value="0.000001" />
+
+
+    <!-- Seed method [current, neutral, middle, random] -->
+    <param name="seed_method" value="random"  type="str"/>
+    <!-- Step size method [fixed, gaussian] -->
+    <param name="step_size_method" value="fixed"  type="str"/>   
+    <!-- Pinv method [cod, svd, ldlt] -->
+    <param name="pinv_method" value="ldlt"  type="str"/>
+    <!-- Limiting method [random, clamping] -->
+    <param name="limiting_method" value="random"  type="str"/>
+
+
+    <!-- NLO Variables -->
+    <!-- Cost Coeff mu0: Position error  -->
+    <param name="nlo_mu0" value="1.0"/>
+    <!-- Cost Coeff mu1: Orientation error  -->
+    <param name="nlo_mu1" value="1.0"/>
+    <!-- Cost Coeff mu2: Joint distance  -->
+    <param name="nlo_mu2" value="0.0000001"/>
+    <!-- Concurrent Mode enabled -->
+    <param name="nlo_concurrent" value="false" type="bool"/>
+    <!-- NLO Error type -->
+    <param name="nlo_error_type" value="log6"  type="str"/>
+    <!-- NLO Error type -->
+    <param name="nlo_concurrent_iterations" value="3"  type="int"/>
+    <!-- NLO Warm start -->
+    <param name="nlo_warm_start" value="yes"  type="str"/>
+
+    <!-- HQP Variables -->
+    <param name="hqp_K_t1" value="1000.0"/>
+    <!-- Residual Task 1 coefficient  -->
+    <param name="hqp_Kr_t1" value="1.0"/>
+    <!-- Coeff Slack variables  -->
+    <param name="hqp_Kw_p1" value="0.00000001"/>
+    <!-- Coeff Joint distance   -->
+    <param name="hqp_Kd_p1" value="0.00000001"/>
+
+    <!-- QP Warm start -->
+    <param name="hqp_warm_start" value="true"  type="bool"/>
+
+
+    <node name="coiks_benchmark" pkg="coiks_benchmark" type="coiks_benchmark" output="screen" />
+
+</launch>

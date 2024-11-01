@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="gen3">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000711805822559146 0.000106293170280902 0.0781493351043811"
+        rpy="0 0 0" />
+      <mass
+        value="1.06209529741948" />
+      <inertia
+        ixx="0.00275577395074891"
+        ixy="-1.13216668698162E-07"
+        ixz="-2.81007700919997E-05"
+        iyy="0.00277994269831878"
+        iyz="-1.83112593008206E-06"
+        izz="0.00115304341113023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="-6.11264820391907E-05 0.0170660606696215 0.235009570894485"
+        rpy="0 0 0" />
+      <mass
+        value="0.208273115191915" />
+      <inertia
+        ixx="0.000560739567441713"
+        ixy="2.23413281865866E-07"
+        ixz="6.88624956438876E-07"
+        iyy="0.000639095217102658"
+        iyz="-7.46460771147331E-05"
+        izz="0.000299234760338728" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.1564"
+      rpy="3.141592 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-12.566370"
+      upper="12.566370"
+      effort="0"
+      velocity="1.39" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-4.81253583052476E-05 -0.0234389415259946 0.38272279454842"
+        rpy="0 0 0" />
+      <mass
+        value="0.130580685764411" />
+      <inertia
+        ixx="0.000424472458310654"
+        ixy="4.25713651995172E-08"
+        ixz="3.15393646286668E-07"
+        iyy="0.000455660911967391"
+        iyz="-6.44086856912552E-05"
+        izz="0.000187775003344438" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0.0054 -0.1284"
+      rpy="1.570796 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.249729"
+      upper="2.249729"
+      effort="0"
+      velocity="1.39" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="-2.20666804331546E-05 -0.000420363304975759 0.622902173013671"
+        rpy="0 0 0" />
+      <mass
+        value="0.129872413148506" />
+      <inertia
+        ixx="0.00101772262576427"
+        ixy="-8.74644772374047E-10"
+        ixz="-3.27225702756985E-07"
+        iyy="0.00104784005956735"
+        iyz="-8.35398570707538E-05"
+        izz="0.000187321659671149" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="0 -0.2104 -0.0064"
+      rpy="-1.570796 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-12.566370"
+      upper="12.566370"
+      effort="0"
+      velocity="1.39" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="-0.000108371569591939 -0.0393716148586181 0.786042915232157"
+        rpy="0 0 0" />
+      <mass
+        value="0.108650318316591" />
+      <inertia
+        ixx="0.000389848139356944"
+        ixy="1.21166746173879E-07"
+        ixz="-8.01236215978536E-07"
+        iyy="0.000418865919525459"
+        iyz="-5.84124572516472E-05"
+        izz="0.000111999366015848" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="0 0.0064 -0.2104"
+      rpy="1.570796 0 0" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.579596"
+      upper="2.579596"
+      effort="0"
+      velocity="1.39" />
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="-8.67E-06 -0.011108 0.9834"
+        rpy="0 0 0" />
+      <mass
+        value="0.060759" />
+      <inertia
+        ixx="0.00013824"
+        ixy="-7.4782E-09"
+        ixz="-2.5987E-08"
+        iyy="0.00014062"
+        iyz="-2.2104E-05"
+        izz="5.8928E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="revolute">
+    <origin
+      xyz="0 -0.2084 -0.0064"
+      rpy="-1.570796 0 0" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-12.566370"
+      upper="12.566370"
+      effort="0"
+      velocity="1.22" />
+  </joint>
+  <link
+    name="link_6">
+    <inertial>
+      <origin
+        xyz="-7.2432E-06 -0.037924 1.0667"
+        rpy="0 0 0" />
+      <mass
+        value="0.06075" />
+      <inertia
+        ixx="0.00015166"
+        ixy="5.3309E-09"
+        ixz="1.6275E-08"
+        iyy="0.00015068"
+        iyz="-3.0182E-05"
+        izz="6.2267E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_6"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.1059"
+      rpy="1.570796 0 0" />
+    <parent
+      link="link_5" />
+    <child
+      link="link_6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.099631"
+      upper="2.099631"
+      effort="0"
+      velocity="1.22" />
+  </joint>
+  <link
+    name="link_7">
+    <inertial>
+      <origin
+        xyz="-0.00033759 -0.0031139 1.1686"
+        rpy="0 0 0" />
+      <mass
+        value="0.066191" />
+      <inertia
+        ixx="3.4453E-05"
+        ixy="1.0111E-07"
+        ixz="3.241E-07"
+        iyy="5.0297E-05"
+        iyz="1.7538E-07"
+        izz="6.2115E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/colan/simulations/URDFs/robots/kinova/gen3/meshes/link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_7"
+    type="revolute">
+    <origin
+      xyz="0 -0.1059 0"
+      rpy="-1.570796 0 0" />
+    <parent
+      link="link_6" />
+    <child
+      link="link_7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-12.566370"
+      upper="12.566370"
+      effort="0"
+      velocity="1.22" />
+  </joint>
+  <link name="link_ee" />
+  <joint name="joint_ee" type="fixed">
+    <origin xyz="0.0 0.0 -0.0615" rpy="3.141592 0.0 0.0" />
+    <parent link="link_7" />
+    <child link="link_ee" />
+    <axis xyz="0 0 0" />
+  </joint>
+</robot>

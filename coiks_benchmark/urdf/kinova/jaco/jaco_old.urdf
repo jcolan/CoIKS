@@ -1,0 +1,283 @@
+<?xml version="1.0" ?>
+
+<robot name="jaco">
+
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/base.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.46784"/>
+      <origin rpy="0 0 0" xyz="0 0 0.1255"/>
+      <inertia ixx="0.000951270861568" ixy="0" ixz="0" iyy="0.000951270861568" iyz="0" izz="0.000374272"/>
+    </inertial>
+  </link>
+
+  <link name="link_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/shoulder.obj"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/ring_big.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.7477"/>
+      <origin xyz="0 -0.002 -0.0605"/>
+      <inertia ixx="0.00152031725204" ixy="0" ixz="0" iyy="0.00152031725204" iyz="0" izz="0.00059816"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="2000" lower="-6.28318530718" upper="6.28318530718" velocity="1"/>
+    <origin rpy="0 3.14159265359 0" xyz="0 0 0.15675"/>
+  </joint>
+
+  <link name="link_2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/arm.obj"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/ring_big.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.99"/>
+      <origin xyz="0 -0.2065 -0.01"/>
+      <inertia ixx="0.010502207991" ixy="0" ixz="0" iyy="0.000792" iyz="0" izz="0.010502207991"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="2000" lower="0.820304748437" upper="5.46288055874" velocity="1"/>
+    <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0.0016 -0.11875"/>
+  </joint>
+
+  <link name="link_3">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/forearm.obj"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/ring_big.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.6763"/>
+      <origin xyz="0 0.081 -0.0086"/>
+      <inertia ixx="0.00142022431908" ixy="0" ixz="0" iyy="0.000304335" iyz="0" izz="0.00142022431908"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_3" type="revolute">
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="2000" lower="0.331612557879" upper="5.9515727493" velocity="1"/>
+    <origin rpy="0 3.14159265359 0" xyz="0 -0.410 0"/>
+  </joint>
+
+  <link name="link_4">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/wrist.obj"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/ring_small.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.426367"/>
+      <origin xyz="0 -0.037 -0.0642"/>
+      <inertia ixx="7.73496906e-05" ixy="0" ixz="0" iyy="7.73496906e-05" iyz="0" izz="0.0001428"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_4" type="revolute">
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="2000" lower="-6.28318530718" upper="6.28318530718" velocity="1"/>
+    <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0.2073 -0.0114"/>
+  </joint>
+
+  <link name="link_5">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/wrist.obj"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/ring_small.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.426367"/>
+      <origin xyz="0 -0.037 -0.0642"/>
+      <inertia ixx="7.73496906e-05" ixy="0" ixz="0" iyy="7.73496906e-05" iyz="0" izz="0.0001428"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_5" type="revolute">
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="2000" lower="-6.28318530718" upper="6.28318530718" velocity="1"/>
+    <origin rpy="1.0471975512 0 3.14159265359" xyz="0 -0.03703 -0.06414"/>
+  </joint>
+
+  <link name="link_6">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/hand_2finger.obj"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/ring_small.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.78"/>
+      <origin xyz="0 0 -0.06"/>
+      <inertia ixx="0.000370498518" ixy="0" ixz="0" iyy="0.000370498518" iyz="0" izz="0.000624"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_6" type="revolute">
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="2000" lower="-6.28318530718" upper="6.28318530718" velocity="1"/>
+    <origin rpy="1.0471975512 0 3.14159265359" xyz="0 -0.03703 -0.06414"/>
+  </joint>
+  <link name="link_ee">
+  </link>
+  <joint name="joint_ee" type="fixed">
+    <parent link="link_6"/>
+    <child link="link_ee"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+  </joint>
+
+
+  <!-- <link name="jaco_link_finger_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/finger_proximal.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0.022 0 0"/>
+      <inertia ixx="7.8999684e-07" ixy="0" ixz="0" iyy="7.8999684e-07" iyz="0" izz="8e-08"/>
+    </inertial>
+  </link>
+
+  <joint name="jaco_joint_finger_1" type="fixed">
+    <parent link="link_6"/>
+    <child link="jaco_link_finger_1"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="-1.570796327 .649262481663582 1.57079632679490" xyz="-0.0025 0.03095 -0.11482"/>
+    <limit effort="2000" lower="0" upper="2" velocity="1"/>
+  </joint>
+
+  <link name="jaco_link_finger_tip_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/finger_distal.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0.022 0 0"/>
+      <inertia ixx="7.8999684e-07" ixy="0" ixz="0" iyy="7.8999684e-07" iyz="0" izz="8e-08"/>
+    </inertial>
+  </link>
+
+  <joint name="jaco_joint_finger_tip_1" type="fixed">
+    <parent link="jaco_link_finger_1"/>
+    <child link="jaco_link_finger_tip_1"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.044 -0.003 0"/>
+    <limit effort="2000" lower="0" upper="2" velocity="1"/>
+  </joint>
+
+  <link name="jaco_link_finger_2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/finger_proximal.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0.022 0 0"/>
+      <inertia ixx="7.8999684e-07" ixy="0" ixz="0" iyy="7.8999684e-07" iyz="0" izz="8e-08"/>
+    </inertial>
+  </link>
+
+  <joint name="jaco_joint_finger_2" type="fixed">
+    <parent link="link_6"/>
+    <child link="jaco_link_finger_2"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="-1.570796327 .649262481663582 -1.57079632679490" xyz="-0.0025 -0.03095 -0.11482"/>
+    <limit effort="2000" lower="0" upper="2" velocity="1"/>
+  </joint>
+
+  <link name="jaco_link_finger_tip_2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="kinova_graphics/finger_distal.obj"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0.022 0 0"/>
+      <inertia ixx="7.8999684e-07" ixy="0" ixz="0" iyy="7.8999684e-07" iyz="0" izz="8e-08"/>
+    </inertial>
+  </link>
+
+  <joint name="jaco_joint_finger_tip_2" type="fixed">
+    <parent link="jaco_link_finger_2"/>
+    <child link="jaco_link_finger_tip_2"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.044 -0.003 0"/>
+    <limit effort="2000" lower="0" upper="2" velocity="1"/>
+  </joint> -->
+
+</robot>
